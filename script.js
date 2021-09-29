@@ -9,48 +9,50 @@ function generatePassword() {
   var numbers = "1234567890";
   var password = "";
   
+  var characterTypes = []
+
+
+ var passwordLength = window.prompt("how long should the password be? (pick a number between 8 and 128)")
+  if (passwordLength < minLength) {
+      passwordLength = minLength
+  }
+
+  if (passwordLength > maxLength) {
+      passwordLength = maxLength
+ }
+
   var promptPassword = window.prompt("Would you like to use uppercase characters? Please select yes or no");
   if (promptPassword === "yes" || promptPassword === "Yes" || promptPassword === "YES") {
-    password += upperCase
+    characterTypes.push(upperCase)
   }
 
   var promptPassword = window.prompt("Would you like to use lowercase characters? Please select yes or no");
   if (promptPassword === "yes" || promptPassword === "Yes" || promptPassword === "YES") {
-    password += lowerCase
+    characterTypes.push(lowerCase)
   }
 
-  for (let i = 0; i < 2; i++) {
-    var index = Math.floor(Math.random() * upperCase.length)
-    password += upperCase.charAt(index)
+  var promptPassword = window.prompt("Would you like to use numbers? Please select yes or no");
+  if (promptPassword === "yes" || promptPassword === "Yes" || promptPassword === "YES") {
+    characterTypes.push(numbers)
+  }
+
+  var promptPassword = window.prompt("Would you like to use special characters? Please select yes or no");
+  if (promptPassword === "yes" || promptPassword === "Yes" || promptPassword === "YES") {
+    characterTypes.push(specialCharacters)
+  }
+
+  console.log(characterTypes)
+
+  for (let i = 0; i < passwordLength; i++) {
+    var characterType = characterTypes[i % characterTypes.length]
+    console.log(i)
+    console.log(characterType)
+    var index = Math.floor(Math.random() * characterType.length)
+    password += characterType.charAt(index)
+    console.log(password)
   } 
-
-  for (let i = 0; i < 2; i++) {
-    var index = Math.floor(Math.random() * lowerCase.length)
-    password += lowerCase.charAt(index)
-  } 
-
-  for (let i = 0; i < 2; i++) {
-    var index = Math.floor(Math.random() * numbers.length)
-    password += numbers.charAt(index)
-  } 
-
-  for (let i = 0; i < 2; i++) {
-    var index = Math.floor(Math.random() * specialCharacters.length)
-    password += specialCharacters.charAt(index)
-  } 
-
- // math = object math.floor is a methd of the math object
-  // concat = add strings together. a,b,c, (then add other arrays, user needs to be able to enter a number and make it that length at least 8 and max 128)
-// reusable code 
-// get an element out of the array - charAt 
-
-
+  
   return password
-  //return is a keyword the fuction will output that value, if you wrap in parenthesis youre not doing anything. 
-  // can give functions certain parameters - code that we want to call at a certiain time
-  // objects - data type "first name" "last name"
-  // function stored in an object = method
-
 
 }
 
