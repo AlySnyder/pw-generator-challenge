@@ -21,7 +21,7 @@ Here is the link to my [Github Repo] (https://github.com/AlySnyder/pw-generator-
 
 
 ## Github pages link for deployment
-Here is the link to my url on [Github pages] ()
+Here is the link to my url on [Github pages] (https://alysnyder.github.io/pw-generator-challenge/)
 
 # Picture of the front page
 
