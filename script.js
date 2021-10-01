@@ -10,7 +10,7 @@ function generatePassword() {
   // array that holds character types (upperCase, lowerCase, etc) that the user chooses
   var characterTypes = []
 
-  // 
+  // array that sets pw to the min/ max length if the user chooses incorectly
  var passwordLength = window.prompt("how long should the password be? (pick a number between 8 and 128)")
   if (passwordLength < minLength) {
       passwordLength = minLength
