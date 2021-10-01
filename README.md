@@ -25,4 +25,4 @@ Here is the link to my url on [Github pages] ()
 
 # Picture of the front page
 
-![Mockup](mockup.png)
+![](mockup.png)
