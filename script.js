@@ -10,7 +10,7 @@ function generatePassword() {
   // array that holds character types (upperCase, lowerCase, etc) that the user chooses
   var characterTypes = []
 
-  // array that sets pw to the min/ max length if the user chooses incorectly
+  // array that sets pw to the required min/ max length if the user chooses incorectly.
  var passwordLength = window.prompt("how long should the password be? (pick a number between 8 and 128)")
   if (passwordLength < minLength) {
       passwordLength = minLength
@@ -19,8 +19,10 @@ function generatePassword() {
   if (passwordLength > maxLength) {
       passwordLength = maxLength
  }
+ 
  // I used "promptpassword" to ask the user which charactertypes they want to include in their password. 
   var promptPassword = window.prompt("Would you like to use uppercase characters? Please select yes or no");
+    console.log(promptPassword)
   if (promptPassword === "yes" || promptPassword === "Yes" || promptPassword === "YES") {
     characterTypes.push(upperCase)
   }
@@ -35,11 +37,12 @@ function generatePassword() {
     characterTypes.push(numbers)
   }
 
+
   var promptPassword = window.prompt("Would you like to use special characters? Please select yes or no");
   if (promptPassword === "yes" || promptPassword === "Yes" || promptPassword === "YES") {
     characterTypes.push(specialCharacters)
   }
-  // I kept my console logs for you to see my debugging :) 
+  // comsole.log
   console.log(characterTypes)
 
 
